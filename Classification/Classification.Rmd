@@ -1,0 +1,42 @@
+---
+title: "Classification"
+author: "Alok K. Shukla"
+date: "September 1, 2016"
+output:
+  html_document:
+    fig_caption: yes
+    highlight: espresso
+    theme: flatly
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data Exploration
+
+Reading the data.
+
+```{r, tidy=TRUE, tidy.opts=list(width.cutoff=60)}
+Communications <- read.delim("~/MachineLearningWithR/DataSets/Communications.tsv", header=FALSE, stringsAsFactors=FALSE)
+colnames(Communications) <- c("Category", "Content")
+```
+
+Lets see how balanced is the data set.
+
+```{r, tidy=TRUE, tidy.opts=list(width.cutoff=60)}
+print(table(Communications$Category))
+```
+
+## Classification
+### Maxent
+```{rtidy=TRUE, tidy.opts=list(width.cutoff=60)}
+library(maxent)
+
+
+```
+
+
